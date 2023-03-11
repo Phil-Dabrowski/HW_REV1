@@ -16,7 +16,11 @@ class PlacesController < ApplicationController
   end
 
   def new
+    if @current_user
     @place = Place.new
+    else
+      redirect_to "/login"
+    end
   end
 
   def create
