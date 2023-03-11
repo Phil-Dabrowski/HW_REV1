@@ -1,5 +1,7 @@
 <h1><%= @place["name"] %></h1>
-
+      <div class="col-sm-1 text-end">
+        <a href="/posts/new/" class="btn btn-success">New Post</a>
+      </div>
 <div class="row">
   <% for post in @posts %>
     <div class="col-md-3 col-sm-6">
