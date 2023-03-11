@@ -1,6 +1,7 @@
+<div class="col-sm-1">
 <h1><%= @place["name"] %></h1>
-      </div>
-      <div class="col-sm- text-begin">
+</div>
+      <div class="col-sm-1">
         <a href="/posts/new?place_id=<%= @place["id"] %>"" class="btn btn-success">New Post</a>
       </div>
     </div>
@@ -11,20 +12,16 @@
         <%# find user who created post %>
         <% user = User.find_by({ "id" => post["user_id"] }) %>
         <%# handle any potential bad data where the post is missing a user %>
-        <% if user %>
-          <%= user["first_name"] %>
-        <% else %>
-          anonymous
-        <% end %>
+<%= post["title"] %>
       </h4>
-
+ <h5><%= post["posted_on"] %></h5>
       <% if post.uploaded_image.attached? %>
         <img src="<%= url_for(post.uploaded_image) %>" class="img-fluid">
       <% else %>
         <img src="<%= post["image"] %>" class="img-fluid">
       <% end %>
-
-      <p><%= post["description"] %></p>
+    </div>
+      <h7><%= post["description"] %></h7>
     </div>
   <% end %>
 </div>
