@@ -1,3 +1,5 @@
+<h1><%= @place["name"] %></h1>
+
 <div class="row">
   <% for post in @posts %>
     <div class="col-md-3 col-sm-6">
@@ -6,7 +8,7 @@
         <% user = User.find_by({ "id" => post["user_id"] }) %>
         <%# handle any potential bad data where the post is missing a user %>
         <% if user %>
-          <%= user["user_id"] %>
+          <%= user["first_name"] %>
         <% else %>
           anonymous
         <% end %>
@@ -22,3 +24,7 @@
     </div>
   <% end %>
 </div>
+<p>
+  <a href="/posts/new?place_id=<%= @place["id"] %>">New Post</a>
+</p>
+
