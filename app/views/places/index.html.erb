@@ -1,15 +1,15 @@
 <div class="row">
 <h1>Places</h1>
 
+      <div class="col-2">
+        <a href="/places/new/" class="btn btn-success">New Place</a>
+      </div>
+
 <ul>
   <% for place in @places %>
    <div class="col-md-3 col-sm-6">
-    <li><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></li>
+    <h6><a href="/places/<%= place["id"] %>"><%= place["name"] %></a></h6>
   </div>
   <% end %>
 </ul>
-
-
-      <div class="col-sm-3 text-end">
-        <a href="/places/new/" class="btn btn-success">New Place</a>
-      </div>
+</div>
